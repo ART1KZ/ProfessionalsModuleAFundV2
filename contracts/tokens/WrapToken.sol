@@ -4,7 +4,7 @@ pragma solidity 0.8.29;
 
 import "../bundles/ERC20Bundle.sol";
 
-contract SystemToken is ERC20 {
+contract WrapToken is ERC20 {
     constructor() ERC20("RTKCoin", "RTK") {
         uint256 initSupply = 20_000_000;
 
@@ -18,9 +18,5 @@ contract SystemToken is ERC20 {
     function transferFrom(address _from, address _to, uint256 _amount) public override returns(bool) {
         _transfer(_from, _to, _amount);
         return true;
-    }
-
-    function price() public pure returns(uint256) {
-        return 1 ether;
     }
 }
